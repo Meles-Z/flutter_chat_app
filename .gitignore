@@ -2,6 +2,7 @@
 *.class
 *.log
 *.pyc
+*firebase_options.dart
 *.swp
 .DS_Store
 .atom/

@@ -17,7 +17,7 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Signup page'),
+        title: const Text(''),
       ),
       body: Form(
         key: useForm,
@@ -25,6 +25,10 @@ class _SignupScreenState extends State<SignupScreen> {
           padding: const EdgeInsets.all(12.0),
           child: Column(
             children: [
+              SizedBox(
+                  height: 100,
+                  width: 100,
+                  child: Image.asset("assets/images/logo.png")),
               TextFormField(
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 controller: email,
@@ -55,16 +59,27 @@ class _SignupScreenState extends State<SignupScreen> {
               const SizedBox(
                 height: 20,
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    if (useForm.currentState!.validate()) {
-                      SignupController.createAccount(
-                          context: context,
-                          email: email.text,
-                          password: password.text);
-                    }
-                  },
-                  child: const Text('Create Account'))
+              Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(0, 50),
+                          backgroundColor: Colors.deepPurpleAccent,
+                          foregroundColor: Colors.white,
+                        ),
+                        onPressed: () {
+                          if (useForm.currentState!.validate()) {
+                            SignupController.createAccount(
+                                context: context,
+                                email: email.text,
+                                password: password.text);
+                          }
+                        },
+                        child: const Text('Create Account')),
+                  ),
+                ],
+              )
             ],
           ),
         ),

@@ -23,6 +23,7 @@ class _MyAppState extends State<MyApp> {
       title: 'ChatApp',
       theme: ThemeData.light(useMaterial3: true),
       home: const SplashScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
