@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
       } else {
         openDashboard();
       }
-      openLogin();
+      openDashboard();
     });
     super.initState();
   }
